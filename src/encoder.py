@@ -115,3 +115,4 @@ def get_encoder(model_name, models_dir):
         encoder=encoder,
         bpe_merges=bpe_merges,
     )
+ 
