@@ -4,7 +4,7 @@ import requests
 from tqdm import tqdm
 
 if len(sys.argv) != 2:
-    print('You must enter the model name as a parameter, e.g.: download_model.py 124M')
+    print('You must enter the model name as a parameter, e.g.: "download_model.py 124M" There are also 355M, 774M, and 1558M size models avalible to download. I recommend at least 32GB of RAM for the 774M model, and at least 64 GB of ram for the 1558M model if you dont want your computer to freeze while the model is training.')
     sys.exit(1)
 
 model = sys.argv[1]
