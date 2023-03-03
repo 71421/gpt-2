@@ -80,4 +80,4 @@ class Sampler(object):
                               len(self.boundaries) - 1) - 1
             if self.boundaries[i + 1] > index + length:
                 within_chunk = index - self.boundaries[i]
-                return self.chunks[i][within_chunk:within_chunk + length]
+                return self.chunks[i][within_chunk:within_chunk + length] 
