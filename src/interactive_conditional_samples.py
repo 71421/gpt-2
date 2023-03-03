@@ -13,9 +13,9 @@ def interact_model(
     seed=None,
     nsamples=1,
     batch_size=1,
-    length=None,
-    temperature=1,
-    top_k=0,
+    length=100,
+    temperature=0.7,
+    top_k=40,
     top_p=1,
     models_dir='models',
 ):
@@ -70,9 +70,9 @@ def interact_model(
         saver.restore(sess, ckpt)
 
         while True:
-            raw_text = input("Model prompt >>> ")
+            raw_text = input("Type your prompt here >>> ")
             while not raw_text:
-                print('Prompt should not be empty!')
+                print('Uhh, was that a typo? The prompt you are sending the AI should not be empty.')
                 raw_text = input("Model prompt >>> ")
             context_tokens = enc.encode(raw_text)
             generated = 0
@@ -83,7 +83,7 @@ def interact_model(
                 for i in range(batch_size):
                     generated += 1
                     text = enc.decode(out[i])
-                    print("=" * 40 + " SAMPLE " + str(generated) + " " + "=" * 40)
+                    print("=" * 40 + " AI OUTPUT " + str(generated) + " " + "=" * 40)
                     print(text)
             print("=" * 80)
 
